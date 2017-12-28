@@ -1,0 +1,136 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "楷体";
+  text-size-adjust: 100%; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;}
+
+img, div, body, html, ul, li, a {
+  -webkit-touch-callout: none; }
+
+input, button {
+  outline: 0; }
+
+button {
+  cursor: pointer; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ccc;}
+  @mixin num($w,$h){
+      width:$w;
+      height: $h;
+  }
+  @mixin flex($j){
+      display: flex;
+      justify-content: $j;
+      align-items: center;
+  }
+  html,body,.wrap{
+      @include num(100%,100%);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+  }
+  header{
+      @include num(100%,1rem);
+      @include flex($j:space-between);
+      background: #00B38A;
+      a{
+          color:#fff;
+          font-size: .36rem;
+      }
+  }
+  nav{
+    @include num(100%,.8rem);
+    border-bottom:1px solid #ccc;
+    @include flex($j:space-between);
+    padding:0 .2rem;
+    span{
+        font-size: .28rem;
+    }
+    em{
+        @include num(1rem,.6rem);
+        background: #F5F5F5;
+        line-height: .6rem;
+        text-align: center;
+        color:#00B38A;
+        border-radius: .2rem;
+        font-size: .28rem;
+    }
+}
+  section{
+      flex:1;
+      overflow-y: scroll;
+      #box{
+          @include num(100%,auto);
+          dl{
+              @include num(100%,2rem);
+              @include flex($j:space-between);
+              border-bottom:1px solid #ccc;
+              dt{
+                  flex:3;
+                  padding:0 .3rem;
+                  img{
+                      @include num(80%,auto);
+                  }
+              }
+              dd{
+                  flex:7;
+                  h3{
+                      font-size: .36rem;
+                      font-weight: 800;
+                      line-height: 2;
+                  }
+                  h4{
+                      @include flex($j:space-between);
+                      padding-right: .3rem;
+                      span{
+                        font-size: .28rem;
+                      }
+                      em{
+                        font-size: .28rem;
+                        color: #00B38A;
+                      }
+                  }
+                  p{
+                      color:#ccc;
+                      line-height: 2;
+                  }
+              }
+          }
+      }
+  }
+  footer{
+      @include num(100%,.8rem);
+      display: flex;
+      background: #F6F6F6;
+      a{
+         line-height: .8rem;
+         text-align: center;
+          flex:1;
+          color:#ccc;
+          font-size: .32rem;
+          display:block;
+          &:hover{
+              background: #E7F3F0;
+              color: #00B38A;
+          }
+          &:nth-child(1){
+            background: #E7F3F0;
+            color: #00B38A;
+        }
+      }
+  }
